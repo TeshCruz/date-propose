@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: Arial, sans-serif;
+
+  background: linear-gradient(
+    135deg,
+    #ff9a9e,
+    #fad0c4
+  );
+
+  padding: 20px;
+}
+
+.proposal-card {
+  width: 100%;
+  max-width: 500px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  padding: 40px 30px;
+  border-radius: 25px;
+
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.emoji {
+  width: 100%;
+  max-width: 500px;
+
+  font-size: 60px;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 20px 0 10px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.buttons button {
+  border: none;
+  padding: 12px 25px;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+#yesButton {
+  background: #ff4d6d;
+  color: white;
+}
+
+#yesButton:hover {
+  transform: scale(1.05);
+}
+
+#noButton {
+  background: #eeeeee;
+  color: #333;
+}
+
+.proposal-card {
+  width: 100%;
+  max-width: 500px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  padding: 40px 30px;
+  border-radius: 25px;
+
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+  animation: appear 0.8s ease;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 500px) {
+  .proposal-card {
+    padding: 30px 20px;
+  }
+
+  h1 {
+    font-size: 27px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  .buttons {
+    flex-direction: column;
+  }
+
+  .buttons button {
+    width: 100%;
+  }
+
+  .date-options {
+    grid-template-columns: 1fr;
+}
+
+.place-option {
+    padding: 12px;
+}
+}
+
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+
+  font-size: 25px;
+
+  animation: floatHeart 3s linear forwards;
+
+  pointer-events: none;
+}
+
+@keyframes floatHeart {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+}
+
+.celebration-emoji {
+  font-size: 70px;
+  animation: celebrate 1s ease infinite alternate;
+}
+
+.date.message {
+  font-size: 16px;
+  margin-top: 15px;
+}
+
+#confirmYes {
+  border: none;
+  padding: 14px 28px;
+
+  background: #ff4d6d;
+  color: white;
+
+  font-size: 17px;
+  font-weight: bold;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+#confirlYes:hover {
+  transform: scale(1.05);
+}
+
+@keyframes celebrate {
+  from {
+    transform: scale(1); 
+  }
+
+  to {
+    transform: scale(1.15);
+  }
+}
+
+#dateInput {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 12px 0 25px;
+
+  border: 2px solid #ffd1dc;
+  border-radius: 12px;
+
+  font-size: 16px;
+  font-family: inherit;
+
+  background: white;
+  cursor: pointer;
+}
+
+#dateInput:focus {
+  outline: none;
+  border-color: #ff4d6d;
+}
+
+.date-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    margin: 20px 0;
+}
+
+.place-option {
+    padding: 15px 10px;
+
+    border: 2px solid transparent;
+    border-radius: 15px;
+
+    background: #fff0f3;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.place-option:hover {
+    transform: translateY(-3px);
+    background: #ffe0e7;
+}
+
+.place-option.selected {
+    background: #ff4d6d;
+    color: white;
+
+    border-color: #ff4d6d;
+
+    transform: scale(1.03);
+}
+
+#confirmYes,
+#planDateButton,
+#lockDateButton,
+#replayButton {
+    border: none;
+    padding: 14px 28px;
+
+    background: #ff4d6d;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+#confirmYes:hover,
+#planDateButton:hover,
+#lockDateButton:hover,
+#replayButton:hover {
+    transform: scale(1.05);
+}
+
+.screen-enter {
+    animation: screenEnter 0.5s ease;
+}
+
+@keyframes screenEnter {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.final-message {
+    margin: 25px 0;
+    line-height: 1.7;
+    font-size: 17px;
+}
